@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres
+    container_name: "omnidoc_container"
+    restart: always
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=password
+      - APP_DB_USER=user_db
+      - APP_DB_PASS=t3st179
+      - APP_DB_NAME=omnidocdb
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d/dump_.sql
+    ports:
+      - 5432:5432

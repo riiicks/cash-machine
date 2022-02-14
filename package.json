@@ -1,0 +1,23 @@
+{
+  "name": "cash-machine",
+  "version": "1.0.0",
+  "description": "Cash Machine Test",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "cash",
+    "machine"
+  ],
+  "author": "Ricardo Pérez Hernández",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2",
+    "joi": "^17.6.0",
+    "log4js": "^6.4.1",    
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4"    
+  }
+}

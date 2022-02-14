@@ -1,0 +1,496 @@
+{
+	"info": {
+		"_postman_id": "7457ecd7-a5d7-4804-ab64-449a008615fa",
+		"name": "Omnidoc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Customer - registro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Eduardo\",\r\n    \"lastNameFather\": \"Pérez\",\r\n    \"cellphone\": \"2248759812\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8180/backend-atm/v1/customer/registro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8180",
+					"path": [
+						"backend-atm",
+						"v1",
+						"customer",
+						"registro"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Customer - registro",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Eduardo\",\r\n    \"lastNameFather\": \"Pérez\",\r\n    \"cellphone\": \"2248759812\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8180/backend-atm/v1/customer/registro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8180",
+							"path": [
+								"backend-atm",
+								"v1",
+								"customer",
+								"registro"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "99"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"63-pS5VlYJjzXXrOVKP4eJ0sTKGeMM\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 14 Feb 2022 17:19:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"CODE\": \"200\",\n    \"STATUS\": \"SUCCESS\",\n    \"MESSAGE\": \"Registro creado exitosamente.\",\n    \"data\": {\n        \"customerId\": 9\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Withdrawals",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\":9,\r\n    \"monto\":\"150\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8180/backend-atm/v1/cash/withdrawals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8180",
+					"path": [
+						"backend-atm",
+						"v1",
+						"cash",
+						"withdrawals"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Withdrawals",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\":9,\r\n    \"monto\":\"150\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8180/backend-atm/v1/cash/withdrawals",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8180",
+							"path": [
+								"backend-atm",
+								"v1",
+								"cash",
+								"withdrawals"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "158"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9e-27zb/XpjET4pgLySh8zxHmwBwow\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 14 Feb 2022 17:19:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"CODE\": \"400\",\n    \"STATUS\": \"SUCCESS\",\n    \"MESSAGE\": \"Ocurrio un error al retirar no tiene fondos para realizar la operacion verifique el monto a retirar.\",\n    \"errors\": \"\"\n}"
+				}
+			]
+		},
+		{
+			"name": "CreditCard - withdrawals",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\": 9,\r\n    \"monto\": 500\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8180/backend-atm/v1/cash/creditCard/withdrawals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8180",
+					"path": [
+						"backend-atm",
+						"v1",
+						"cash",
+						"creditCard",
+						"withdrawals"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "CreditCard - withdrawals",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\": 9,\r\n    \"monto\": 500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8180/backend-atm/v1/cash/creditCard/withdrawals",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8180",
+							"path": [
+								"backend-atm",
+								"v1",
+								"cash",
+								"creditCard",
+								"withdrawals"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "158"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9e-27zb/XpjET4pgLySh8zxHmwBwow\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 14 Feb 2022 17:19:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"CODE\": \"400\",\n    \"STATUS\": \"SUCCESS\",\n    \"MESSAGE\": \"Ocurrio un error al retirar no tiene fondos para realizar la operacion verifique el monto a retirar.\",\n    \"errors\": \"\"\n}"
+				}
+			]
+		},
+		{
+			"name": "AddDebitAccount",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\": 9,\r\n    \"monto\": 2500\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8180/backend-atm/v1/cash/addDebitAccount",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8180",
+					"path": [
+						"backend-atm",
+						"v1",
+						"cash",
+						"addDebitAccount"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "AddDebitAccount",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\": 9,\r\n    \"monto\": 2500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8180/backend-atm/v1/cash/addDebitAccount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8180",
+							"path": [
+								"backend-atm",
+								"v1",
+								"cash",
+								"addDebitAccount"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "101"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"65-vpT1SDeYZoa7AjaNDa6LtYYrstE\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 14 Feb 2022 17:23:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"CODE\": \"200\",\n    \"STATUS\": \"SUCCESS\",\n    \"MESSAGE\": \"Se agrego correctamente el monto a su cuenta.\",\n    \"data\": \"\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Pay - creditAccount",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\": 9,\r\n    \"monto\": 5000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8180/backend-atm/v1/pay/creditAccount",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8180",
+					"path": [
+						"backend-atm",
+						"v1",
+						"pay",
+						"creditAccount"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Pay - creditAccount",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\": 9,\r\n    \"monto\": 5000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8180/backend-atm/v1/pay/creditAccount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8180",
+							"path": [
+								"backend-atm",
+								"v1",
+								"pay",
+								"creditAccount"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "101"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"65-vpT1SDeYZoa7AjaNDa6LtYYrstE\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 14 Feb 2022 17:25:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"CODE\": \"200\",\n    \"STATUS\": \"SUCCESS\",\n    \"MESSAGE\": \"Se agrego correctamente el monto a su cuenta.\",\n    \"data\": \"\"\n}"
+				}
+			]
+		}
+	]
+}
